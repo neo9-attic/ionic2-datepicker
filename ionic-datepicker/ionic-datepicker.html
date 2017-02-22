@@ -1,0 +1,34 @@
+<div class="ionic-datepicker">
+  <ion-grid>
+    <ion-row center baseline class="ionic-datepicker-header">
+      <ion-col width-20 class="ionic-datepicker-header-left">
+        <button ion-button icon-only clear (click)="prevMonth()" [disabled]="!canPrev" full>
+          <ion-icon class="icon-onoff-previous"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col center text-center class="ionic-datepicker-header-content" text-capitalize>
+        {{ currentDate.format('MMMM') }}
+      </ion-col>
+      <ion-col width-20 class="ionic-datepicker-header-left">
+        <button ion-button icon-only clear (click)="nextMonth()" [disabled]="!canNext" full>
+          <ion-icon class="icon-onoff-next"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ionic-datepicker-months">
+        <div class="ionic-datepicker-months-month" text-uppercase *ngFor="let i of [0,1,2,3,4,5,6,7]">{{ days[i].momentObj.format('dddd').charAt(0) }}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ionic-datepicker-days">
+        <button ion-button clear class="ionic-datepicker-days-day" *ngFor="let d of days; let i = index"
+                (click)="selectDate($event, d.momentObj)"
+                [disabled]="!d.enabled"
+                [ngClass]="{ 'disabled': !d.enabled, 'today': d.today, 'selected': d.selected, 'prevMonth': d.prevMonth, 'nextMonth': d.nextMonth, 'hasEvent': d.hasEvent }">
+          {{ d.day }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
