@@ -1,0 +1,22 @@
+{
+  "name": "ionic2-datepicker",
+  "version": "1.0.0",
+  "description": "A date-picker responsive for ionic2 apps",
+  "main": "ionic-datepicker/ionic-datepicker.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neo9/ionic2-datepicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neo9/ionic2-datepicker/issues"
+  },
+  "dependencies": {
+    "moment": "^2.17.1"
+  },
+  "homepage": "https://github.com/neo9/ionic2-datepicker#readme"
+}
